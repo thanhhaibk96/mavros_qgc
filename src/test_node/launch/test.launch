@@ -1,0 +1,16 @@
+<launch>
+  <param name="ned_lat" value="10.7744287" />
+  <param name="ned_lon" value="106.6592230" />
+
+  <node pkg="gcs_transceiver" type="gcs_transceiver"
+        name="gcs_transceiver" output="screen" >
+    <param name="main_period" value="1" />
+    <param name="main_url" value="udp://127.0.0.1:14551@127.0.0.1:14550" />
+    <param name="autopilot_sysid" value="1" />
+    <param name="gcs_sysid" value="255" />
+  </node>
+
+  <node pkg="test_node" type="test_node"
+        name="test_node" output="screen" >
+  </node>
+</launch>
